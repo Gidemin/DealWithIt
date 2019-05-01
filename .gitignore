@@ -328,3 +328,19 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+#cordova app ignore list
+cordova/hooks
+cordova/node_modules
+cordova/platforms
+cordova/plugins
+cordova/res
+cordova/www
+
+#angular app ignore list
+angular/dist
+angular/tmp
+angular/out-tsc
+angular/node_modules
+angular/.idea
+angular/.vscode
