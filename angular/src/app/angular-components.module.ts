@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import {
+  MatButtonModule,
+  MatDividerModule,
+  MatIconModule,
   MatListModule,
   MatToolbarModule
 } from '@angular/material';
-import { from } from 'rxjs';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    MatListModule,
-    MatToolbarModule
-  ],
   exports: [
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
     MatListModule,
     MatToolbarModule
   ]

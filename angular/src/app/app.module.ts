@@ -1,10 +1,13 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularComponentsModule } from './angular-components.module';
 import { CreateTaskComponent } from './create-task/create-task.component';
+import { MatNativeDateModule } from '@angular/material';
 import { TaskListComponent } from './task-list/task-list.component';
 
 @NgModule({
@@ -16,9 +19,10 @@ import { TaskListComponent } from './task-list/task-list.component';
   imports: [
     AppRoutingModule,
     AngularComponentsModule,
-    BrowserModule
+    BrowserAnimationsModule,
+    BrowserModule,
+    MatNativeDateModule
   ],
-  providers: [AngularComponentsModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
