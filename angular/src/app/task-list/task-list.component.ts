@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Task } from '../models/task';
+import { Note } from '../models/note';
 
 @Component({
   selector: 'app-task-list',
@@ -10,11 +10,11 @@ import { Task } from '../models/task';
 })
 export class TaskListComponent {
 
-  public tasks: Task[] = [];
+  public tasks: Note[] = [];
 
   constructor(private router: Router) {
       for (let i = 0; i < 20; i++) {
-         this.tasks.push(new Task('task_' + i, i + ' Test_data'));
+         this.tasks.push(new Note('task_' + i, i + ' Test_data'));
       }
   }
 

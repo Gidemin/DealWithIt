@@ -1,4 +1,4 @@
-export class Task {
+export class Note {
     public title = '';
     public text = '';
 
