@@ -5,6 +5,7 @@ import {
   MatButtonModule,
   MatDividerModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatToolbarModule
 } from '@angular/material';
@@ -16,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
+    MatInputModule,
     MatListModule,
     MatToolbarModule,
     ReactiveFormsModule
