@@ -1,18 +1,27 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularComponentsModule } from './angular-components.module';
+import { CreateTaskComponent } from './create-task/create-task.component';
+import { MatNativeDateModule } from '@angular/material';
+import { TaskListComponent } from './task-list/task-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateTaskComponent,
+    TaskListComponent
   ],
   imports: [
+    AppRoutingModule,
+    AngularComponentsModule,
     BrowserModule,
-    AppRoutingModule
+    MatNativeDateModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
