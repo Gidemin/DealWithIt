@@ -1,4 +1,31 @@
-<p>
-  create-task works!
-</p>
-<button (click)="backToTaskList()">go back to task list</button>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>
+      <button mat-icon-button (click)="backToTaskList()">
+        <i class="material-icons">arrow_back</i>
+      </button>
+    </span>
+    <span>
+      Create task
+    </span>
+    <span>
+      <button mat-icon-button (click)="createNote()">
+        <i class="material-icons">add_box</i>
+      </button>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="form-container">
+  <form [formGroup]="createTaskForm">
+    <div class="title-input-container">
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+    </div>
+    <div class="text-input-container">
+      <mat-form-field>
+        <textarea matInput placeholder="Text" matTextareaAutosize formControlName="text" #text></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
