@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
+  MatDialogModule,
   MatDividerModule,
   MatIconModule,
   MatInputModule,
@@ -15,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [
     BrowserAnimationsModule,
     MatButtonModule,
+    MatDialogModule,
     MatDividerModule,
     MatIconModule,
     MatInputModule,
