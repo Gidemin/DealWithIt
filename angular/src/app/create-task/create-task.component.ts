@@ -10,6 +10,9 @@ import {
   FormGroup
 } from '@angular/forms';
 
+import { GlobalDataService } from '../global-data.service';
+import { Note } from '../models/note';
+
 @Component({
   selector: 'app-create-task',
   templateUrl: './create-task.component.html',
@@ -22,6 +25,7 @@ export class CreateTaskComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private globalDataService: GlobalDataService,
     private router: Router
   ) {
     this.createTaskForm = this.formBuilder.group({
@@ -35,7 +39,11 @@ export class CreateTaskComponent implements OnInit {
   }
 
   createNote() {
-    console.log(this.createTaskForm.controls['title'].value, this.createTaskForm.controls['text'].value);
+    this.globalDataService.addRecord(new Note(
+      this.createTaskForm.controls['text'].value,
+      this.createTaskForm.controls['title'].value
+    ));
+    this.backToTaskList();
   }
 
   backToTaskList() {
