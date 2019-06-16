@@ -1,0 +1,18 @@
+<mat-dialog-content>
+  <div *ngIf="data.noteObject.title">
+      <h3 mat-dialog-title>{{data.noteObject.title}}</h3>
+  </div>
+  <div>
+      {{data.noteObject.text}}
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button color="warn" (click)="removeNote()">
+    <i class="material-icons">delete_forever</i>
+    Delete
+  </button>
+  <button mat-button mat-dialog-close>
+    <i class="material-icons">close</i>
+    Close
+  </button>
+</mat-dialog-actions>
