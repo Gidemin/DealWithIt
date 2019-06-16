@@ -12,12 +12,16 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="task-list-container">
-  <mat-list>
-    <mat-list-item *ngFor="let task of tasks; let i = index" class="task-list">
+  <mat-list *ngIf="notes.length">
+    <mat-list-item *ngFor="let note of notes; let i = index" class="task-list" (click)="openNoteViewDialog(i)">
       <mat-icon mat-list-icon>description</mat-icon>
-      <h4 mat-line *ngIf="task.title && task.title != ''">{{task.title}}</h4>
-      <p mat-line> {{task.text}} </p>
+      <h4 mat-line *ngIf="note.title && note.title != ''">{{note.title}}</h4>
+      <p mat-line> {{note.text}} </p>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
+  <div class="create-note-screen" *ngIf="!notes.length">
+    <h3>Your task list is empty</h3>
+    <button mat-stroked-button (click)="createTask()">Create first note</button>
+  </div>
 </div>
