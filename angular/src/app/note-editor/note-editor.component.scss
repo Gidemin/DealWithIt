@@ -1,0 +1,64 @@
+:host form {
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 10px 10px;
+}
+
+:host mat-toolbar-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+:host mat-toolbar {
+    top: 0;
+    left: 0;
+}
+
+:host textarea {
+    overflow: auto;
+}
+
+.form-container {
+    height: calc(100% - 56px);
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+:host .mat-form-field {
+    width: 100%;
+}
+
+.text-input-container {
+    height: calc(100% - 70px);
+    overflow: auto;
+}
+
+.title-input-container {
+    height: 70px;
+}

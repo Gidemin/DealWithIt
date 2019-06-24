@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>
+      <button mat-icon-button (click)="goBack()">
+        <i class="material-icons">arrow_back</i>
+      </button>
+    </span>
+    <span>
+      Edit note
+    </span>
+    <span>
+      <button mat-icon-button (click)="saveRecord()">
+        <i class="material-icons">save</i>
+      </button>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="form-container">
+  <form [formGroup]="editTaskForm">
+    <div class="title-input-container">
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+    </div>
+    <div class="text-input-container">
+      <mat-form-field>
+        <textarea matInput placeholder="Text" matTextareaAutosize formControlName="text" #text></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
