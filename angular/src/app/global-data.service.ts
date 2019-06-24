@@ -20,11 +20,17 @@ export class GlobalDataService {
   }
 
   extractDataFromStorage(): Observable<any> {
-    const tempRawData = JSON.parse(localStorage.getItem('data'));
+    const tempRawData = JSON.parse(localStorage.getItem('data'), (key, value) => {
+      if (key === 'date') {
+        return value ? new Date(value) : null;
+      } else {
+        return value;
+      }
+    });
     const tempDataArray = [];
     for (const dataObject of tempRawData) {
       if (dataObject.text) {
-        tempDataArray.push(new Note(dataObject.text, dataObject.title));
+        tempDataArray.push(new Note(dataObject.text, dataObject.title, dataObject.date));
       }
     }
     this.data.next(tempDataArray);
@@ -58,7 +64,7 @@ export class GlobalDataService {
     return new Observable(observer => observer.next(record));
   }
 
-  overriveRecord(id: number, record: Note) {
+  overrideRecord(id: number, record: Note) {
     const tempData = this.data.value;
     tempData.splice(id, 1, record);
     this.insertDataToStorage(tempData);

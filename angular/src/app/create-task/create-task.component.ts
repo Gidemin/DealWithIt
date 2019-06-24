@@ -41,13 +41,21 @@ export class CreateTaskComponent implements OnInit {
   }
 
   createNote() {
-    const date = new Date(
-      this.createTaskForm.controls['date'].value
-      + 'T'
-      + this.createTaskForm.controls['time'].value
-      + ':00'
-    );
+    let date;
+    if (this.createTaskForm.controls['date'].value || this.createTaskForm.controls['time'].value) {
+      date = new Date(
+        this.createTaskForm.controls['date'].value
+        + 'T'
+        + this.createTaskForm.controls['time'].value
+        + ':00'
+      );
+    }
     this.globalDataService.addRecord(new Note(
+      this.createTaskForm.controls['text'].value,
+      this.createTaskForm.controls['title'].value || null,
+      date || null
+    ));
+    console.log(new Note(
       this.createTaskForm.controls['text'].value,
       this.createTaskForm.controls['title'].value || null,
       date || null

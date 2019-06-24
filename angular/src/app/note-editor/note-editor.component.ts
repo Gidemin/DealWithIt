@@ -59,7 +59,7 @@ export class NoteEditorComponent implements OnInit {
       this.editTaskForm.controls['text'].value,
       this.editTaskForm.controls['title'].value
     );
-    this.dataService.overriveRecord(this.noteId, tempData);
+    this.dataService.overrideRecord(this.noteId, tempData);
   }
 
 }
