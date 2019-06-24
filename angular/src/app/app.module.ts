@@ -9,6 +9,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
 import { GlobalDataService } from './global-data.service';
 import { MatNativeDateModule } from '@angular/material';
 import { NoteDisplayComponent } from './note-display/note-display.component';
+import { NoteEditorComponent } from './note-editor/note-editor.component';
 import { TaskListComponent } from './task-list/task-list.component';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { TaskListComponent } from './task-list/task-list.component';
     AppComponent,
     CreateTaskComponent,
     NoteDisplayComponent,
+    NoteEditorComponent,
     TaskListComponent
   ],
   imports: [
