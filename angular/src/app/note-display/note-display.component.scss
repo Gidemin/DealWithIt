@@ -17,7 +17,7 @@
     font: 500 20px/22px Roboto,"Helvetica Neue",sans-serif;
 }
 
-.material-icons {
+:host .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
@@ -29,6 +29,7 @@
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
+    margin-bottom: 3px;
     
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
