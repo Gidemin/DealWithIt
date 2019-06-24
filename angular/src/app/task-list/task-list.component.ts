@@ -54,7 +54,6 @@ export class TaskListComponent implements OnInit {
           noteObject: this.notes[noteNumber],
           noteObjectNumber: noteNumber
         },
-        maxWidth: '60%',
         minWidth: '35%'
       }
     );
