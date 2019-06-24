@@ -54,11 +54,20 @@
     width: 100%;
 }
 
+.date-input-row {
+    display: flex;
+    flex-direction: row
+}
+
+.date-input {
+    margin-left: 8px
+}
+
 .text-input-container {
-    height: calc(100% - 70px);
+    height: calc(100% - 140px);
     overflow: auto;
 }
 
 .title-input-container {
-    height: 70px;
+    height: 140px;
 }

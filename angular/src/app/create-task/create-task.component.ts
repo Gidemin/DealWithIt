@@ -30,7 +30,9 @@ export class CreateTaskComponent implements OnInit {
   ) {
     this.createTaskForm = this.formBuilder.group({
       title: '',
-      text: ''
+      text: '',
+      date: '',
+      time: ''
     });
   }
 
@@ -39,9 +41,16 @@ export class CreateTaskComponent implements OnInit {
   }
 
   createNote() {
+    const date = new Date(
+      this.createTaskForm.controls['date'].value
+      + 'T'
+      + this.createTaskForm.controls['time'].value
+      + ':00'
+    );
     this.globalDataService.addRecord(new Note(
       this.createTaskForm.controls['text'].value,
-      this.createTaskForm.controls['title'].value
+      this.createTaskForm.controls['title'].value || null,
+      date || null
     ));
     this.backToTaskList();
   }
