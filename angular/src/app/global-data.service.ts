@@ -20,10 +20,10 @@ export class GlobalDataService {
   }
 
   extractDataFromStorage(): Observable<any> {
-    const tempData = JSON.parse(localStorage.getItem('data'));
+    const tempRawData = JSON.parse(localStorage.getItem('data'));
     const tempDataArray = [];
-    for (const dataObject of tempData) {
-      if (dataObject.text && dataObject.text !== null) {
+    for (const dataObject of tempRawData) {
+      if (dataObject.text) {
         tempDataArray.push(new Note(dataObject.text, dataObject.title));
       }
     }
@@ -42,16 +42,26 @@ export class GlobalDataService {
   }
 
   addRecord(object: any) {
-    let tempData = this.data.value;
+    const tempData = this.data.value;
     tempData.push(object);
     this.insertDataToStorage(tempData);
   }
 
-  deleteRecord(noteId: number) {
-    let tempData = this.data.value;
-    tempData.splice(noteId, 1);
-    this.data.next(tempData);
-    localStorage.setItem('data', JSON.stringify(this.data.value));
+  deleteRecord(id: number) {
+    const tempData = this.data.value;
+    tempData.splice(id, 1);
+    this.insertDataToStorage(tempData);
+  }
+
+  getRecord(id: number): Observable<any> {
+    const record = this.data.value[id];
+    return new Observable(observer => observer.next(record));
+  }
+
+  overriveRecord(id: number, record: Note) {
+    const tempData = this.data.value;
+    tempData.splice(id, 1, record);
+    this.insertDataToStorage(tempData);
   }
 
 }
