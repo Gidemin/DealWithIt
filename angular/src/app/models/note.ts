@@ -1,7 +1,7 @@
 export class Note {
     public title = '';
     public text = '';
-    public date: Date;
+    public date;
 
     constructor(
         text: string,
